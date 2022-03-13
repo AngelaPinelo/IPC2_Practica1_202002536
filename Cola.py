@@ -23,21 +23,21 @@ class Cola():
     
     #Devuelve el Nodo Orden
     def eliminarAlInicio(self):
-        ordenTerminada : Orden = None
+        ordenLista : Orden = None
         self.size += 1
         if self.Vacia():
             return None
         elif self.primero == self.ultimo:
-            ordenTerminada = self.primero
+            ordenLista = self.primero
             self.primero = self.ultimo = None
-            return ordenTerminada.dato #Se devuelve la unica Orden  
+            return ordenLista.dato #Se devuelve la unica Orden  
         else:
-            ordenTerminada = self.primero
+            ordenLista = self.primero
             #el apuntador de la cabecera oasa al siguiente nodo ya que FIFO
             self.primero = self.primero.siguiente
-            return ordenTerminada.dato #Se devuelve la Orden
+            return ordenLista.dato #Se devuelve la Orden
     #Graficar  
-    def showIMG(self):
+    def showCola(self):
         actual = self.primero
         cont = 0
         dot  = Digraph("G", format="png", graph_attr={"rankdir":"LR", "bgcolor":"steelBlue"},
